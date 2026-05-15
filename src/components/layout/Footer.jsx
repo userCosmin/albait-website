@@ -17,8 +17,8 @@ export default function Footer() {
     { label: 'Acasa', href: '/' },
     { label: 'Servicii', href: '/#servicii' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Termeni si Conditii', href: '#' },
-    { label: 'Politica Cookies', href: '#' },
+    { label: 'Termeni si Conditii', href: '/termeni-conditii' },
+    { label: 'Politica Cookies', href: '/confidentialitate' },
   ]
 
   return (
@@ -132,8 +132,31 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+          {/* ANPC SAL/SOL — obligatoriu conform legislatiei romane */}
+          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-4 text-xs" style={{ color: 'var(--color-text-muted)' }}>
+            <span>Soluționarea litigiilor:</span>
+            <a
+              href="https://anpc.ro/ce-este-sal/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors duration-200 hover:text-white underline underline-offset-2"
+              style={{ color: 'var(--color-text-muted)' }}
+            >
+              ANPC — SAL (Soluționare Alternativă)
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+            <a
+              href="https://ec.europa.eu/consumers/odr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors duration-200 hover:text-white underline underline-offset-2"
+              style={{ color: 'var(--color-text-muted)' }}
+            >
+              SOL — Platforma UE Online
+            </a>
+          </div>
           <p className="text-center text-sm" style={{ color: 'var(--color-text-muted)' }}>
-            &copy; {new Date().getFullYear()} Albait. Toate drepturile rezervate. &bull; Alba Iulia, Romania
+            &copy; {new Date().getFullYear()} Albait S.R.L. Toate drepturile rezervate. &bull; Alba Iulia, România
           </p>
         </div>
       </div>

@@ -10,6 +10,8 @@ import LandingPage from './pages/LandingPage'
 import SeoGeo from './pages/SeoGeo'
 import Automatizari from './pages/Automatizari'
 import Contact from './pages/Contact'
+import TermeniConditii from './pages/TermeniConditii'
+import Confidentialitate from './pages/Confidentialitate'
 import SuccesM7 from './pages/models/SuccesM7'
 import SuccesM4 from './pages/models/SuccesM4'
 import CompactS from './pages/models/CompactS'
@@ -33,6 +35,8 @@ export default function App() {
           <Route path="/seo-geo" element={<SeoGeo />} />
           <Route path="/automatizari" element={<Automatizari />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/termeni-conditii" element={<TermeniConditii />} />
+          <Route path="/confidentialitate" element={<Confidentialitate />} />
         </Routes>
         <Footer />
         <WhatsAppButton />
