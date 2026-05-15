@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://albait.ro/sitemap.xml

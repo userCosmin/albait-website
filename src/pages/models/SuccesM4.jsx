@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Receipt, Monitor, Shield, Cpu, ArrowRight, Phone, CheckCircle, ChevronLeft } from 'lucide-react'
+import PageMeta from '../../components/PageMeta'
 
 const specs = [
   { label: 'Afișaj operator', value: 'LCD grafic 128×64 px, iluminat' },
@@ -31,6 +32,10 @@ const fadeUp = {
 export default function SuccesM4() {
   return (
     <main style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+      <PageMeta
+        title="Casa de Marcat Incotex Succes M4 — Alba Iulia | Albait"
+        description="Casa de marcat Incotex Succes M4 cu afișaj dublu și securitate EAL 4. Jurnal electronic 8GB, procesor 32 biți. Fiscalizare ANAF în aceeași zi. 0758 343 653."
+      />
       {/* Hero */}
       <section className="relative pt-28 pb-20 overflow-hidden" style={{ backgroundColor: 'var(--color-bg-secondary)' }}>
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl" style={{ background: 'radial-gradient(circle, #4F46E5, transparent)' }} />

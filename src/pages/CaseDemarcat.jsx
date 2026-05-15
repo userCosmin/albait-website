@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Receipt, CheckCircle, Wrench, Wifi, Package, ArrowRight, Phone } from 'lucide-react'
+import PageMeta from '../components/PageMeta'
 
 const features = [
   { icon: Receipt, title: 'Vanzare & Fiscalizare ANAF', desc: 'Echipamente omologate oficial, fiscalizare rapida si asistenta pentru inregistrarea la ANAF.' },
@@ -30,6 +31,10 @@ const fadeUp = {
 export default function CaseDemarcat() {
   return (
     <main style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+      <PageMeta
+        title="Case de Marcat Alba Iulia — Vânzare, Fiscalizare ANAF, Service | Albait"
+        description="Case de marcat avizate ANAF în Alba Iulia. Instalare și fiscalizare în aceeași zi. Service autorizat Succes M7, M4, Compact S, Expert SX-02. Sună: 0758 343 653."
+      />
       {/* Hero */}
       <section className="relative pt-28 pb-20 overflow-hidden" style={{ backgroundColor: 'var(--color-bg-secondary)' }}>
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl" style={{ background: 'radial-gradient(circle, #2563EB, transparent)' }} />

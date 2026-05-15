@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Receipt, Wifi, Battery, Printer, Database, ArrowRight, Phone, CheckCircle, ChevronLeft } from 'lucide-react'
+import PageMeta from '../../components/PageMeta'
 
 const specs = [
   { label: 'Dimensiuni', value: '223 × 196 × 80 mm' },
@@ -34,6 +35,10 @@ const fadeUp = {
 export default function SuccesM7() {
   return (
     <main style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+      <PageMeta
+        title="Casa de Marcat Incotex Succes M7 — Alba Iulia | Albait"
+        description="Casa de marcat Incotex Succes M7 cu jurnal electronic. Portabilă, USB/Ethernet/Bluetooth, autonomie 60h. Fiscalizare ANAF în aceeași zi. Sună: 0758 343 653."
+      />
       {/* Hero */}
       <section className="relative pt-28 pb-20 overflow-hidden" style={{ backgroundColor: 'var(--color-bg-secondary)' }}>
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl" style={{ background: 'radial-gradient(circle, #2563EB, transparent)' }} />
