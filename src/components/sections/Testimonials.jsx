@@ -5,24 +5,27 @@ import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 const testimonials = [
   {
     name: 'Maria Ionescu',
-    company: 'Cofetaria Dulce Vis',
     text: 'Am achizitionat o casa de marcat de la Albait si totul a mers perfect. Instalarea a fost in aceeasi zi, iar echipa a explicat totul pas cu pas. Recomand cu incredere!',
     initials: 'MI',
     color: '#2563EB',
   },
   {
     name: 'Alexandru Popa',
-    company: 'Service Auto Popa & Fii',
-    text: 'Ne-au facut un website superb si au optimizat profilul Google Business. Acum aparem primul pe Google cand cineva cauta service auto in Alba Iulia. Clienti noi in fiecare saptamana!',
+    text: 'Fiscalizarea si instalarea au fost facute extrem de rapid. In aceeasi zi in care am sunat, casa de marcat era deja functionala. Profesionalism total, nu m-am asteptat sa fie atat de simplu.',
     initials: 'AP',
     color: '#4F46E5',
   },
   {
     name: 'Elena Muresan',
-    company: 'Salonul Frumusetii',
-    text: 'Automatizarile WhatsApp ne-au economisit cel putin 2 ore pe zi. Confirmari automate, programari, totul functioneaza singur. Investitia s-a recuperat in prima luna.',
+    text: 'Service prompt si serios. Casa de marcat s-a defectat intr-o zi de vineri si au venit sa o repare in cateva ore. Nu m-au lasat cu activitatea blocata. Multumesc echipei Albait!',
     initials: 'EM',
     color: '#06B6D4',
+  },
+  {
+    name: 'Gheorghe Stancu',
+    text: 'Mi-au recomandat modelul potrivit pentru tipul meu de activitate si au facut toata procedura cu ANAF. Nu a trebuit sa ma ocup de nimic. Acum am si un website facut de ei — arata excelent!',
+    initials: 'GS',
+    color: '#2563EB',
   },
 ]
 
@@ -98,7 +101,7 @@ export default function Testimonials() {
                     {testimonials[current].name}
                   </div>
                   <div className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
-                    {testimonials[current].company}
+                    Client Albait
                   </div>
                 </div>
               </div>

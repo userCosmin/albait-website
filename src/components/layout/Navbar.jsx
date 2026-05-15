@@ -159,10 +159,10 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* Digital */}
-            <Link to="/seo-geo" className="text-sm font-medium transition-colors duration-200 hover:text-white"
+            {/* Website */}
+            <Link to="/website-prezentare" className="text-sm font-medium transition-colors duration-200 hover:text-white"
               style={{ color: 'var(--color-text-muted)' }}>
-              Digital
+              Website
             </Link>
 
             {/* Contact */}
@@ -257,9 +257,9 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              <Link to="/seo-geo" className="py-3 px-2 text-sm font-medium border-b"
+              <Link to="/website-prezentare" className="py-3 px-2 text-sm font-medium border-b"
                 style={{ color: 'var(--color-text-muted)', borderColor: 'var(--color-border)' }}>
-                Digital
+                Website
               </Link>
               <Link to="/contact" className="py-3 px-2 text-sm font-medium border-b"
                 style={{ color: 'var(--color-text-muted)', borderColor: 'var(--color-border)' }}>

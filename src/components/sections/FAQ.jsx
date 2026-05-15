@@ -9,23 +9,23 @@ const faqs = [
   },
   {
     q: 'Cat dureaza instalarea si ce include?',
-    a: 'Instalarea dureaza de obicei intre 2-4 ore. Serviciul nostru include: livrarea echipamentului, configurarea tehnica, fiscalizarea la ANAF, instruirea personalului si testarea completa. In cele mai multe cazuri, casa de marcat este operational in aceeasi zi.',
+    a: 'Instalarea dureaza de obicei intre 2-4 ore. Serviciul nostru include: livrarea echipamentului, configurarea tehnica, fiscalizarea la ANAF, instruirea personalului si testarea completa. In cele mai multe cazuri, casa de marcat este operationala in aceeasi zi in care ne contactati.',
   },
   {
-    q: 'Ce este GEO (Generative Engine Optimization) si de ce conteaza?',
-    a: 'GEO este noua frontiera a optimizarii online: asigurarea ca afacerea ta apare in raspunsurile generate de motoarele AI precum ChatGPT, Google Gemini si Perplexity. Tot mai multi clienti folosesc aceste instrumente pentru a gasi servicii locale. Noi va pozitionam atat in Google clasic, cat si in raspunsurile AI.',
+    q: 'Ce modele de case de marcat aveti disponibile?',
+    a: 'Avem in stoc permanent urmatoarele modele avizate ANAF: Incotex Succes M7 (stationara si portabila, conectivitate extinsa), Incotex Succes M4 (afisaj dublu, securitate EAL 4), Daisy Compact S (cel mai mic model din Romania, ideal pentru taximetristi si activitati mobile) si Daisy Expert SX-02 (conectare directa la serverele ANAF). Va recomandam modelul potrivit dupa o scurta discutie despre nevoile afacerii.',
+  },
+  {
+    q: 'Ce se intampla daca casa de marcat se defecteaza?',
+    a: 'Sunati-ne si un tehnician ajunge la dumneavoastra de regula in aceeasi zi. Avem tehnicieni autorizati si piese de schimb originale in stoc. Oferim si echipament de inlocuire in cazul in care reparatia dureaza mai mult, ca sa nu va intrerupeti activitatea.',
+  },
+  {
+    q: 'Oferiti consumabile pentru case de marcat?',
+    a: 'Da, avem in stoc permanent role termice, cerneluri si accesorii pentru toate modelele pe care le comercializam. Puteti comanda telefonic sau prin WhatsApp, cu livrare rapida in Alba Iulia si judet.',
   },
   {
     q: 'Cat costa un website de prezentare si in cat timp il faceti?',
-    a: 'Preturile noastre pornesc de la 800 lei pentru un website de prezentare de baza. Termenul de livrare este de 5-10 zile lucratoare. Fiecare proiect include design responsive, optimizare SEO de baza, formular de contact si integrare WhatsApp. Va ofertam gratuit dupa o discutie despre nevoile tale.',
-  },
-  {
-    q: 'Oferiti service si suport dupa livrarea proiectului?',
-    a: 'Da, absolut. Toti clientii nostri beneficiaza de suport tehnic continuu. Pentru casele de marcat oferim service rapid (de obicei in aceeasi zi), iar pentru serviciile digitale avem pachete lunare de administrare si optimizare. Nu va lasam singuri dupa predarea proiectului.',
-  },
-  {
-    q: 'Puteti gestiona si reclamele Google si Meta pentru afacerea mea?',
-    a: 'Da, gestionam campanii Google Ads si Meta Ads (Facebook + Instagram) cu focus pe targeting local. Fiecare campanie include setup, creare anunturi, optimizare continua si rapoarte lunare clare. Lucram transparent: stiti exact pe ce se duc banii si ce rezultate obtineti.',
+    a: 'Preturile noastre pornesc de la 800 lei pentru un website de prezentare de baza. Termenul de livrare este de 5-10 zile lucratoare. Fiecare proiect include design responsive, formular de contact, integrare WhatsApp si optimizare de baza pentru Google. Va ofertam gratuit dupa o scurta discutie.',
   },
 ]
 

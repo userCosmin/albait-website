@@ -6,10 +6,10 @@ const LOGO_URL = 'https://pub-69e61f4c1e58482bbc21a1f35a399331.r2.dev/sigla-alba
 export default function Footer() {
   const services = [
     { label: 'Case de Marcat', href: '/case-de-marcat' },
+    { label: 'Fiscalizare ANAF', href: '/case-de-marcat' },
+    { label: 'Service & Reparatii', href: '/case-de-marcat' },
     { label: 'Website Prezentare', href: '/website-prezentare' },
     { label: 'Landing Page', href: '/landing-page' },
-    { label: 'SEO + GEO', href: '/seo-geo' },
-    { label: 'Automatizari', href: '/automatizari' },
   ]
 
   const company = [

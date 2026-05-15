@@ -58,7 +58,7 @@ export default function Hero() {
               }}
             >
               <Zap size={12} />
-              Servicii Digitale Premium &bull; Alba Iulia
+              Case de Marcat &bull; Alba Iulia
             </motion.div>
 
             <motion.h1
@@ -72,11 +72,11 @@ export default function Hero() {
                 color: 'var(--color-text-primary)',
               }}
             >
-              Digitalizăm afacerea ta{' '}
+              Casa de marcat fiscalizată{' '}
               <span className="gradient-text">
-                de la casa de marcat
+                rapid, în aceeași zi
               </span>{' '}
-              până la prezenta online.
+              — în Alba Iulia.
             </motion.h1>
 
             <motion.p
@@ -87,7 +87,7 @@ export default function Hero() {
               className="text-lg mb-8 leading-relaxed max-w-xl"
               style={{ color: 'var(--color-text-muted)' }}
             >
-              Case de marcat fiscalizate, website-uri moderne, SEO si automatizari pentru afaceri locale care vor sa creasca.
+              Vânzare, instalare și fiscalizare ANAF în aceeași zi. Service autorizat, consumabile și website-uri moderne pentru afaceri locale din Alba.
             </motion.p>
 
             <motion.div

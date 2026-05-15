@@ -1,63 +1,56 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Receipt, Globe, Zap, Search, MapPin, Bot, Megaphone, Server, ArrowRight } from 'lucide-react'
+import { Receipt, Globe, Zap, MapPin, ArrowRight, Wrench, Package, Wifi } from 'lucide-react'
 
 const services = [
   {
     icon: Receipt,
-    title: 'Case de Marcat & Fiscalizare',
-    desc: 'Vanzare, instalare si service rapid in aceeasi zi. Avizat ANAF.',
+    title: 'Vânzare Case de Marcat',
+    desc: 'Toate modelele avizate ANAF, in stoc permanent. Livrare si fiscalizare in aceeasi zi.',
     href: '/case-de-marcat',
+    color: '#2563EB',
+  },
+  {
+    icon: Wifi,
+    title: 'Fiscalizare ANAF',
+    desc: 'Ne ocupam de toata procedura: inregistrare, conectare online ANAF, documente incluse.',
+    href: '/case-de-marcat',
+    color: '#06B6D4',
+  },
+  {
+    icon: Wrench,
+    title: 'Service & Reparatii',
+    desc: 'Interventie rapida in Alba Iulia si judet. Tehnicieni autorizati, piese originale.',
+    href: '/case-de-marcat',
+    color: '#4F46E5',
+  },
+  {
+    icon: Package,
+    title: 'Consumabile & Accesorii',
+    desc: 'Role termice, cerneluri si accesorii pentru orice model de casa de marcat.',
+    href: '/contact',
     color: '#2563EB',
   },
   {
     icon: Globe,
     title: 'Website-uri de Prezentare',
-    desc: 'Design modern care aduce clienti noi si reflecta profesionalismul tau.',
+    desc: 'Design modern care aduce clienti noi si reflecta profesionalismul afacerii tale.',
     href: '/website-prezentare',
     color: '#06B6D4',
   },
   {
     icon: Zap,
     title: 'Landing Page-uri',
-    desc: 'Pagini optimizate pentru conversii maxime si campanii eficiente.',
+    desc: 'Pagini optimizate pentru conversii maxime, ideale pentru campanii si promotii.',
     href: '/landing-page',
     color: '#4F46E5',
   },
   {
-    icon: Search,
-    title: 'SEO + GEO',
-    desc: 'Vizibilitate in Google si motoare AI precum ChatGPT si Gemini.',
-    href: '/seo-geo',
-    color: '#2563EB',
-  },
-  {
     icon: MapPin,
     title: 'Google Business',
-    desc: 'Optimizare profil local complet. Apar pe harta cand clientii te cauta.',
-    href: '/seo-geo',
-    color: '#06B6D4',
-  },
-  {
-    icon: Bot,
-    title: 'Automatizari Business',
-    desc: 'WhatsApp, email, facturare automata. Economisesti timp si bani.',
-    href: '/automatizari',
-    color: '#4F46E5',
-  },
-  {
-    icon: Megaphone,
-    title: 'Google & Meta Ads',
-    desc: 'Campanii locale cu ROI masurabil. Platesti doar pentru rezultate.',
+    desc: 'Optimizare profil local complet. Apari pe harta cand clientii te cauta in zona.',
     href: '/contact',
     color: '#2563EB',
-  },
-  {
-    icon: Server,
-    title: 'Hosting & Administrare',
-    desc: 'Hosting rapid, SSL inclus, email business si backup zilnic.',
-    href: '/contact',
-    color: '#06B6D4',
   },
 ]
 
@@ -79,14 +72,14 @@ export default function Services() {
             Servicii Complete
           </div>
           <h2 className="font-sora font-bold text-4xl md:text-5xl mb-4" style={{ color: 'var(--color-text-primary)' }}>
-            Tot ce are nevoie afacerea ta
+            Tot ce ai nevoie pentru casa de marcat
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--color-text-muted)' }}>
-            De la fiscalizare si echipamente la prezenta digitala completa — suntem singurul partener de care ai nevoie.
+            Vânzare, fiscalizare, service si consumabile — plus prezenta digitala pentru afacerea ta locala.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {services.map((service, i) => (
             <motion.div
               key={service.title}

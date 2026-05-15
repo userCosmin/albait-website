@@ -34,8 +34,8 @@ const advantages = [
   },
   {
     icon: TrendingUp,
-    title: 'Rezultate Masurabile',
-    desc: 'Rapoarte lunare clare pentru serviciile digitale. Stiti exact ce primiti pentru investitia facuta.',
+    title: 'Pret Corect, Fara Surprize',
+    desc: 'Va oferim pret fix inainte de orice lucrare. Fara costuri ascunse, fara surprize la factura.',
     color: '#4F46E5',
   },
 ]
