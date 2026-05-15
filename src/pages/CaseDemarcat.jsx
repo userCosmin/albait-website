@@ -10,10 +10,10 @@ const features = [
 ]
 
 const models = [
-  { name: 'Succes M7', desc: 'Casa de marcat fiscala cu jurnal electronic. Conectivitate USB, serial si Ethernet. Autonomie portabila.', badge: 'Popular' },
-  { name: 'Succes M4', desc: 'Model electronic fiscal pentru inregistrarea vanzarilor. Memorare fiscala, imprimanta termica si afisaj.', badge: null },
-  { name: 'Compact S', desc: 'Model portabil cu jurnal electronic, ideal pentru activitati mobile. Conectivitate GPRS, Wi-Fi si Bluetooth.', badge: 'Portabil' },
-  { name: 'Expert SX', desc: 'Conectare online directa cu serverele ANAF. Recomandata pentru puncte fixe si comert ambulant.', badge: null },
+  { name: 'Succes M7', desc: 'Casa de marcat fiscala cu jurnal electronic. Conectivitate USB, serial si Ethernet. Autonomie portabila.', badge: 'Popular', href: '/case-de-marcat/succes-m7' },
+  { name: 'Succes M4', desc: 'Model electronic fiscal avansat, afisaj dublu operator+client, procesor 32 biti si securitate EAL 4.', badge: null, href: '/case-de-marcat/succes-m4' },
+  { name: 'Compact S', desc: 'Cea mai mica casa de marcat din Romania. Portabila, GPRS inclus din fabrica, ideala pentru taximetristi.', badge: 'Portabil', href: '/case-de-marcat/compact-s' },
+  { name: 'Expert SX-02', desc: 'Conectare online directa cu serverele ANAF fara module externe. Recomandata pentru puncte fixe si ambulant.', badge: null, href: '/case-de-marcat/expert-sx-02' },
 ]
 
 const steps = [
@@ -148,8 +148,8 @@ export default function CaseDemarcat() {
                 )}
                 <h3 className="font-sora font-bold text-xl mb-3" style={{ color: 'var(--color-text-primary)' }}>{m.name}</h3>
                 <p className="text-sm mb-4" style={{ color: 'var(--color-text-muted)' }}>{m.desc}</p>
-                <Link to="/contact" className="flex items-center gap-1 text-sm font-medium" style={{ color: '#2563EB' }}>
-                  Cere oferta <ArrowRight size={14} />
+                <Link to={m.href} className="flex items-center gap-1 text-sm font-medium" style={{ color: '#06B6D4' }}>
+                  Vezi detalii <ArrowRight size={14} />
                 </Link>
               </motion.div>
             ))}
