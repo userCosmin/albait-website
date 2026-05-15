@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Receipt, Globe, Zap, MapPin, ArrowRight, Wrench, Package, Wifi } from 'lucide-react'
+import { Receipt, Globe, Zap, MapPin, ArrowRight, Wrench, Package, Wifi, Building2 } from 'lucide-react'
 
 const services = [
   {
@@ -52,6 +52,13 @@ const services = [
     href: '/contact',
     color: '#2563EB',
   },
+  {
+    icon: Building2,
+    title: 'Înființare Firme',
+    desc: 'Înregistrăm SRL-ul sau PFA-ul tău la ONRC rapid și fără bătăi de cap. Acte, sediu, cod CAEN incluse.',
+    href: '/contact',
+    color: '#06B6D4',
+  },
 ]
 
 export default function Services() {
@@ -79,7 +86,7 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {services.map((service, i) => (
             <motion.div
               key={service.title}

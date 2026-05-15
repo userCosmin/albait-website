@@ -27,6 +27,10 @@ const faqs = [
     q: 'Cat costa un website de prezentare si in cat timp il faceti?',
     a: 'Preturile noastre pornesc de la 800 lei pentru un website de prezentare de baza. Termenul de livrare este de 5-10 zile lucratoare. Fiecare proiect include design responsive, formular de contact, integrare WhatsApp si optimizare de baza pentru Google. Va ofertam gratuit dupa o scurta discutie.',
   },
+  {
+    q: 'Ajutati si la infiintarea unei firme (SRL sau PFA)?',
+    a: 'Da! Ne ocupam de intreaga procedura: rezervarea denumirii la ONRC, pregatirea dosarului, alegerea codului CAEN potrivit activitatii, stabilirea sediului social si depunerea documentelor. In general, infiintarea unui SRL sau PFA se finalizeaza in 3-5 zile lucratoare. Ideal daca vrei sa deschizi o afacere si sa obtii si casa de marcat in acelasi timp — te ajutam de la zero.',
+  },
 ]
 
 function FAQItem({ question, answer, isOpen, onClick }) {

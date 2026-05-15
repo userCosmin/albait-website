@@ -10,6 +10,7 @@ export default function Footer() {
     { label: 'Service & Reparatii', href: '/case-de-marcat' },
     { label: 'Website Prezentare', href: '/website-prezentare' },
     { label: 'Landing Page', href: '/landing-page' },
+    { label: 'Înființare Firme', href: '/contact' },
   ]
 
   const company = [
