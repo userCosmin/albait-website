@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { useCookieConsent } from '../../context/CookieConsentContext'
 
 const LOGO_URL = 'https://pub-69e61f4c1e58482bbc21a1f35a399331.r2.dev/sigla-albait.webp'
 
 export default function Footer() {
+  const { resetConsent } = useCookieConsent()
   const services = [
     { label: 'Case de Marcat', href: '/case-de-marcat' },
     { label: 'Fiscalizare ANAF', href: '/case-de-marcat' },
@@ -133,7 +135,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
           {/* ANPC SAL/SOL — obligatoriu conform legislatiei romane */}
-          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-4 text-xs" style={{ color: 'var(--color-text-muted)' }}>
+          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-3 text-xs" style={{ color: 'var(--color-text-muted)' }}>
             <span>Soluționarea litigiilor:</span>
             <a
               href="https://anpc.ro/ce-este-sal/"
@@ -154,6 +156,16 @@ export default function Footer() {
             >
               SOL — Platforma UE Online
             </a>
+          </div>
+          <div className="flex justify-center mb-4">
+            <button
+              type="button"
+              onClick={resetConsent}
+              className="text-xs underline underline-offset-2 transition-colors duration-200 hover:text-white"
+              style={{ color: 'rgba(255,255,255,0.3)', background: 'none', border: 'none', cursor: 'pointer' }}
+            >
+              🍪 Preferințe cookies
+            </button>
           </div>
           <p className="text-center text-sm" style={{ color: 'var(--color-text-muted)' }}>
             &copy; {new Date().getFullYear()} Albait S.R.L. Toate drepturile rezervate. &bull; Alba Iulia, România

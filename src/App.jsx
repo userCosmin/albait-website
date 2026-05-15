@@ -3,6 +3,8 @@ import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import ScrollToTop from './components/ScrollToTop'
+import CookieBanner from './components/CookieBanner'
+import { CookieConsentProvider } from './context/CookieConsentContext'
 import Home from './pages/Home'
 import CaseDemarcat from './pages/CaseDemarcat'
 import WebsitePrezentare from './pages/WebsitePrezentare'
@@ -19,8 +21,10 @@ import ExpertSX02 from './pages/models/ExpertSX02'
 
 export default function App() {
   return (
+    <CookieConsentProvider>
     <BrowserRouter>
       <ScrollToTop />
+      <CookieBanner />
       <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
         <Navbar />
         <Routes>
@@ -42,5 +46,6 @@ export default function App() {
         <WhatsAppButton />
       </div>
     </BrowserRouter>
+    </CookieConsentProvider>
   )
 }
