@@ -90,19 +90,20 @@ export default function ExpertSX02() {
                 </a>
               </motion.div>
             </div>
-            {/* Visual */}
+            {/* Imagine produs */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2, duration: 0.7 }}
               className="relative flex justify-center"
             >
-              <div className="relative w-72 h-72 rounded-3xl flex items-center justify-center"
-                style={{ background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.2)' }}>
-                <div className="absolute inset-0 rounded-3xl opacity-30 blur-xl" style={{ background: 'linear-gradient(135deg,#2563EB,#4F46E5)' }} />
-                <div className="relative z-10 text-center">
-                  <Monitor size={80} style={{ color: '#60A5FA', margin: '0 auto 16px' }} />
-                  <p className="font-sora font-bold text-2xl" style={{ color: 'var(--color-text-primary)' }}>Expert SX-02</p>
-                  <p className="text-sm mt-1" style={{ color: 'var(--color-text-muted)' }}>Daisy</p>
-                </div>
+              <div className="relative rounded-3xl p-6 flex items-center justify-center"
+                style={{ background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.15)' }}>
+                <div className="absolute inset-0 rounded-3xl opacity-20 blur-2xl" style={{ background: 'linear-gradient(135deg,#2563EB,#4F46E5)' }} />
+                <img
+                  src="https://pub-69e61f4c1e58482bbc21a1f35a399331.r2.dev/expert-sx.webp"
+                  alt="Casa de marcat Expert SX-02"
+                  className="relative z-10"
+                  style={{ maxHeight: '320px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(37,99,235,0.3))' }}
+                />
               </div>
             </motion.div>
           </div>

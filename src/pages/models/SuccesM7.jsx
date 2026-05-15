@@ -92,22 +92,23 @@ export default function SuccesM7() {
                 </a>
               </motion.div>
             </div>
-            {/* Visual */}
+            {/* Imagine produs */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2, duration: 0.7 }}
               className="relative flex justify-center"
             >
-              <div className="relative w-72 h-72 rounded-3xl flex items-center justify-center"
-                style={{ background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.2)' }}>
-                <div className="absolute inset-0 rounded-3xl opacity-30 blur-xl" style={{ background: 'linear-gradient(135deg,#2563EB,#06B6D4)' }} />
-                <div className="relative z-10 text-center">
-                  <Receipt size={80} style={{ color: '#06B6D4', margin: '0 auto 16px' }} />
-                  <p className="font-sora font-bold text-2xl" style={{ color: 'var(--color-text-primary)' }}>Succes M7</p>
-                  <p className="text-sm mt-1" style={{ color: 'var(--color-text-muted)' }}>Incotex</p>
-                  <div className="mt-4 px-4 py-1.5 rounded-full text-xs font-bold inline-block"
-                    style={{ background: 'linear-gradient(135deg,#2563EB,#06B6D4)', color: 'white' }}>
-                    Popular
-                  </div>
+              <div className="relative rounded-3xl p-6 flex items-center justify-center"
+                style={{ background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.15)' }}>
+                <div className="absolute inset-0 rounded-3xl opacity-20 blur-2xl" style={{ background: 'linear-gradient(135deg,#2563EB,#06B6D4)' }} />
+                <img
+                  src="https://pub-69e61f4c1e58482bbc21a1f35a399331.r2.dev/succes-m7.webp"
+                  alt="Casa de marcat Succes M7"
+                  className="relative z-10"
+                  style={{ maxHeight: '320px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(37,99,235,0.3))' }}
+                />
+                <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-bold z-10"
+                  style={{ background: 'linear-gradient(135deg,#2563EB,#06B6D4)', color: 'white' }}>
+                  Popular
                 </div>
               </div>
             </motion.div>

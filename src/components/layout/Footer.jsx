@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Zap, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
+
+const LOGO_URL = 'https://pub-69e61f4c1e58482bbc21a1f35a399331.r2.dev/sigla-albait.webp'
 
 export default function Footer() {
   const services = [
@@ -24,14 +26,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #2563EB, #06B6D4)' }}
-              >
-                <Zap size={16} className="text-white" />
-              </div>
-              <span className="text-xl font-bold font-sora gradient-text">Albait</span>
+            <Link to="/" className="flex items-center mb-4">
+              <img
+                src={LOGO_URL}
+                alt="Albait"
+                style={{ height: '40px', width: 'auto', objectFit: 'contain' }}
+              />
             </Link>
             <p className="text-sm mb-6" style={{ color: 'var(--color-text-muted)' }}>
               Partenerul tau de incredere pentru case de marcat fiscalizate si servicii digitale in Alba Iulia.
