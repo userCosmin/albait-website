@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case de marcat – AlbaIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        /* Header */
+        header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark) !important;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 7rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+
+        /* Products Grid */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .product-showcase {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .product-detail {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: all 0.3s;
+        }
+
+        .product-detail:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            min-height: 300px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 280px;
+            object-fit: contain;
+        }
+
+        .product-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            width: fit-content;
+            margin-bottom: 1rem;
+        }
+
+        .product-detail h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .product-detail p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--dark);
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Comparison Table */
+        .comparison {
+            background: white;
+            padding: 4rem 2rem;
+        }
+
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            color: var(--gray);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .comparison-table th {
+            background: var(--dark);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8fafc;
+        }
+
+        .comparison-table .check {
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-transparent {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-transparent:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-credit {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        .footer-credit a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .product-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                min-height: 200px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Case de marcat</h1>
+        <p>Echipamente fiscale avizate ANAF pentru orice tip de afacere</p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="product-showcase">
+            <!-- Succes M7 -->
+            <div class="product-detail">
+                <div class="product-image">
+                    <img src="https://albait.ro/wp-content/uploads/2025/02/casa-de-marcat-succes-m7-1.png" alt="Succes M7">
+                </div>
+                <div class="product-content">
+                    <span class="product-badge">Recomandat</span>
+                    <h2>Succes M7</h2>
+                    <p>Casa de marcat Succes M7 este un echipament fiscal cu jurnal electronic, conform noilor reglementări ANAF. Are funcții de vânzare complexe și conectivitate extinsă.</p>
+                    <ul class="features-list">
+                        <li>Jurnal electronic integrat</li>
+                        <li>Conectivitate: USB, Serial, Ethernet</li>
+                        <li>Autonomie portabilă</li>
+                        <li>Disponibil în diverse culori</li>
+                        <li>Potrivit pentru comerț ambulant</li>
+                        <li>Conform reglementări ANAF 2026</li>
+                    </ul>
+                    <div class="product-actions">
+                        <a href="index.html#contact" class="btn btn-primary">Cere ofertă</a>
+                        <a href="tel:0758343653" class="btn btn-outline">Sună acum</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Succes M4 -->
+            <div class="product-detail">
+                <div class="product-image">
+                    <img src="https://albait.ro/wp-content/uploads/2025/02/casa-de-marcat-succes-m4-3.png" alt="Succes M4">
+                </div>
+                <div class="product-content">
+                    <h2>Succes M4</h2>
+                    <p>Casa de marcat Succes M4 este un model electronic fiscal, utilizat pentru înregistrarea vânzărilor. Compactă și fiabilă pentru afaceri mici și mijlocii.</p>
+                    <ul class="features-list">
+                        <li>Memorie fiscală integrată</li>
+                        <li>Imprimantă termică de încredere</li>
+                        <li>Afișaj clar pentru operator</li>
+                        <li>Conformă legislația România</li>
+                        <li>Ideală pentru magazine mici</li>
+                        <li>Ușor de utilizat</li>
+                    </ul>
+                    <div class="product-actions">
+                        <a href="index.html#contact" class="btn btn-primary">Cere ofertă</a>
+                        <a href="tel:0758343653" class="btn btn-outline">Sună acum</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compact S -->
+            <div class="product-detail">
+                <div class="product-image">
+                    <img src="https://albait.ro/wp-content/uploads/2025/02/casa-de-marcat-compact-s-1.png" alt="Compact S">
+                </div>
+                <div class="product-content">
+                    <span class="product-badge">Portabil</span>
+                    <h2>Daisy Compact S</h2>
+                    <p>Casa de marcat Daisy Compact S este un model portabil cu jurnal electronic, ideal pentru activități mobile și livrări la domiciliu.</p>
+                    <ul class="features-list">
+                        <li>Conectivitate GPRS inclusă</li>
+                        <li>Wi-Fi și Bluetooth</li>
+                        <li>Conectare directă la ANAF</li>
+                        <li>Transfer rapid de date</li>
+                        <li>Design compact și ușor</li>
+                        <li>Baterie cu autonomie extinsă</li>
+                    </ul>
+                    <div class="product-actions">
+                        <a href="index.html#contact" class="btn btn-primary">Cere ofertă</a>
+                        <a href="tel:0758343653" class="btn btn-outline">Sună acum</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expert SX -->
+            <div class="product-detail">
+                <div class="product-image">
+                    <img src="https://albait.ro/wp-content/uploads/2025/02/casa-de-marcat-expert-sx-0.png" alt="Expert SX">
+                </div>
+                <div class="product-content">
+                    <h2>Expert SX</h2>
+                    <p>Casa de marcat Expert SX este un model avizat conform noii legislații fiscale. Echipată pentru conectarea online directă cu serverele ANAF.</p>
+                    <ul class="features-list">
+                        <li>Conectare online directă ANAF</li>
+                        <li>Nu necesită dispozitive externe</li>
+                        <li>Pentru puncte de lucru fixe</li>
+                        <li>Potrivit și pentru comerț ambulant</li>
+                        <li>Avizat ANAF 2026</li>
+                        <li>Rapoarte detaliate incluse</li>
+                    </ul>
+                    <div class="product-actions">
+                        <a href="index.html#contact" class="btn btn-primary">Cere ofertă</a>
+                        <a href="tel:0758343653" class="btn btn-outline">Sună acum</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison">
+        <div class="comparison-container">
+            <div class="section-header">
+                <h2>Comparație modele</h2>
+                <p>Alege casa de marcat potrivită pentru afacerea ta</p>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Caracteristică</th>
+                        <th>Succes M7</th>
+                        <th>Succes M4</th>
+                        <th>Compact S</th>
+                        <th>Expert SX</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Jurnal electronic</strong></td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conectivitate Ethernet</strong></td>
+                        <td class="check">✓</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wi-Fi / Bluetooth</strong></td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPRS</strong></td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Portabil</strong></td>
+                        <td class="check">✓</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pentru comerț ambulant</strong></td>
+                        <td class="check">✓</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conectare directă ANAF</strong></td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ai nevoie de ajutor la alegere?</h2>
+        <p>Echipa noastră de experți te va ghida în alegerea casei de marcat potrivite pentru afacerea ta, buget și cerințele legale.</p>
+        <div class="cta-buttons">
+            <a href="index.html#contact" class="btn btn-white">Contactează-ne</a>
+            <a href="tel:0758343653" class="btn btn-transparent">📞 0758 343 653</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="case-de-marcat.html">Case de marcat</a>
+            <a href="servicii.html">Servicii</a>
+            <a href="#">Termeni și condiții</a>
+            <a href="#">Politică cookie-uri (UE)</a>
+        </div>
+        <p class="footer-credit">© 2026 AlbaIT • Design by <a href="#">AldeaCosmin</a></p>
+    </footer>
+</body>
+</html>

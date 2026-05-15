@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact S – AlbaIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--dark); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+        }
+
+        .nav-cta:hover { background: var(--primary-dark) !important; }
+
+        .product-hero {
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .product-hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .product-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-hero-content p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .product-hero-image {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-hero-image img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .product-details {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .details-content h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .details-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .features-section { margin-top: 3rem; }
+
+        .features-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list { display: grid; gap: 1rem; }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f0f9ff;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .feature-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-item p {
+            font-size: 0.875rem;
+            margin: 0;
+            color: var(--gray);
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .sidebar-card ul { list-style: none; }
+
+        .sidebar-card li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-card li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .contact-box h3 { color: white; }
+
+        .contact-box p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline-white {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline-white:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .specs-section {
+            background: white;
+            padding: 4rem 2rem;
+        }
+
+        .specs-container { max-width: 1200px; margin: 0 auto; }
+
+        .specs-container h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .specs-table tr:nth-child(odd) { background: #f8fafc; }
+
+        .specs-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 600;
+            color: var(--dark);
+            width: 40%;
+        }
+
+        .specs-table td:last-child { color: var(--gray); }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: white; }
+
+        .footer-credit {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        .footer-credit a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        @media (max-width: 1024px) {
+            .product-hero-container,
+            .details-grid { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .product-hero-content h1 { font-size: 2rem; }
+            .specs-table td { padding: 0.75rem; font-size: 0.875rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="product-hero">
+        <div class="product-hero-container">
+            <div class="product-hero-content">
+                <span class="product-badge">Ultra Portabil</span>
+                <h1>Compact S</h1>
+                <p>Casa de marcat Compact S – Soluția afacerii tale. Un dispozitiv fiscal modern construit pentru a satisface diverse cerințe comerciale.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-white">Cere ofertă</a>
+                    <a href="case-de-marcat.html" class="btn btn-outline-white">Înapoi la produse</a>
+                </div>
+            </div>
+            <div class="product-hero-image">
+                <img src="https://albait.ro/wp-content/uploads/2025/02/casa-de-marcat-compact-s-1.png" alt="Compact S">
+            </div>
+        </div>
+    </section>
+
+    <section class="product-details">
+        <div class="details-grid">
+            <div class="details-content">
+                <h2>Descriere</h2>
+                <p>Compact S este o casă de marcat fiscală modernă, proiectată pentru afacerile care au nevoie de mobilitate și fiabilitate. Cu designul său compact și greutatea redusă, este soluția ideală pentru comercianții ambulanți, livrări la domiciliu sau spații comerciale mici.</p>
+                <p>Rapoartele XML sunt transmise automat către serverele ANAF, asigurând conformitatea fiscală fără efort suplimentar.</p>
+
+                <div class="features-section">
+                    <h3>Caracteristici principale</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">📋</div>
+                            <div>
+                                <h4>Conformitate fiscală</h4>
+                                <p>Îndeplinește toate cerințele legale în vigoare pentru echipamente fiscale</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎒</div>
+                            <div>
+                                <h4>Design ultra compact</h4>
+                                <p>Dimensiuni reduse (167x84x60mm) și greutate de doar 300g - perfect portabil</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📶</div>
+                            <div>
+                                <h4>Conectivitate completă</h4>
+                                <p>microUSB, Bluetooth, WiFi și GPRS pentru conectare la orice periferic</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">💾</div>
+                            <div>
+                                <h4>Jurnal Electronic 8GB</h4>
+                                <p>Capacitate de aproximativ 1 milion de bonuri fiscale stocate</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔋</div>
+                            <div>
+                                <h4>Autonomie extinsă</h4>
+                                <p>Acumulator Li-Ion 3.7V-2200mAh pentru utilizare îndelungată</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-card">
+                    <h3>Specificații rapide</h3>
+                    <ul>
+                        <li>Afișaj LCD 132x48 px</li>
+                        <li>Imprimantă 32 simb/linie</li>
+                        <li>Jurnal Electronic 8GB</li>
+                        <li>~1 milion bonuri</li>
+                        <li>Bluetooth, WiFi, GPRS</li>
+                        <li>Greutate: 300g</li>
+                        <li>Dimensiuni: 167x84x60mm</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card contact-box" id="contact">
+                    <h3>Interesat de acest produs?</h3>
+                    <p>Contactează-ne pentru o ofertă personalizată!</p>
+                    <a href="tel:0758343653" class="btn btn-white">📞 0758 343 653</a>
+                    <p style="margin-top: 1rem; font-size: 0.875rem;">sau</p>
+                    <a href="mailto:office@albait.ro" class="btn btn-outline-white">office@albait.ro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="specs-section">
+        <div class="specs-container">
+            <h2>Specificații tehnice</h2>
+            <table class="specs-table">
+                <tr>
+                    <td>Afișaj operator</td>
+                    <td>LCD grafic 132 x 48 px</td>
+                </tr>
+                <tr>
+                    <td>Imprimantă</td>
+                    <td>Termică, 32 simboluri/linie, 10 linii/sec</td>
+                </tr>
+                <tr>
+                    <td>Jurnal Electronic</td>
+                    <td>8GB (~1 milion bonuri)</td>
+                </tr>
+                <tr>
+                    <td>Conectivitate</td>
+                    <td>microUSB, Bluetooth, WiFi, GPRS</td>
+                </tr>
+                <tr>
+                    <td>Acumulator</td>
+                    <td>Li-Ion 3.7V 2200mAh</td>
+                </tr>
+                <tr>
+                    <td>Dimensiuni</td>
+                    <td>167 x 84 x 60 mm</td>
+                </tr>
+                <tr>
+                    <td>Greutate</td>
+                    <td>300 g</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ai nevoie de ajutor la alegere?</h2>
+        <p>Echipa noastră de experți te va ghida în alegerea casei de marcat potrivite pentru afacerea ta.</p>
+        <div class="cta-buttons">
+            <a href="tel:0758343653" class="btn btn-white">📞 Sună acum</a>
+            <a href="mailto:office@albait.ro" class="btn btn-outline-white">Trimite email</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="case-de-marcat.html">Case de marcat</a>
+            <a href="servicii.html">Servicii</a>
+            <a href="#">Termeni și condiții</a>
+            <a href="#">Politică cookie-uri (UE)</a>
+        </div>
+        <p class="footer-credit">© 2026 AlbaIT • Design by <a href="#">AldeaCosmin</a></p>
+    </footer>
+</body>
+</html>
